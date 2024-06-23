@@ -1,14 +1,12 @@
-<form action = "/users" method = "POST" accept-charset = "UTF-8">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
+<%= form_with model: @user do |form| %>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
 
-    <label for="email">Email</label>
-    <input type="text" name="email" id="email" />
+    <%= form.label :username %>
+    <%= form.text_field :username%>
 
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username" />
+    <%= form.label :password %>
+    <%= form.password_field :password %>
 
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" />
-
-    <input type="submit" value="Create User" />
-</form>
+    <%= form.submit 'oi' %>
+<% end %>
